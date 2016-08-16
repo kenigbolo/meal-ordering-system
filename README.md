@@ -13,7 +13,7 @@ A single page application (SPA) that coordinates meal ordering for Company emplo
 
 Once you have those two, you can then run your command line and navigate into the project's folder and then run:
 
-* Run ```bundle``` to install all other dependencies
+* Run ```bundle install``` to install all other dependencies
 * Run ```rake db:migrate```
 * Run ```rake db:seed ```
 
