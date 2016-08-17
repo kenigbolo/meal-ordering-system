@@ -5,8 +5,16 @@ def set_valid_omniauth
   OmniAuth.config.add_mock(:facebook, mock_fb_oauth_response)
 end
 
+def set_valid_omniauth_github
+  OmniAuth.config.add_mock(:github, mock_github_oauth_response)
+end
+
 def set_invalid_omniauth
   OmniAuth.config.mock_auth[:facebook] = :invalid_credentials
+end
+
+def set_invalid_omniauth_github
+  OmniAuth.config.mock_auth[:github] = :invalid_credentials
 end
 
 def mock_fb_oauth_response
@@ -45,4 +53,22 @@ def mock_fb_oauth_response
       }
     }
   )
+end
+
+def mock_github_oauth_reponse
+  OmniAuth::AuthHash.new(
+    provider: "github",
+    uid: "12345",
+    info: {
+        name: "kenigbolo Meya Stephen",
+        email: "kenigbol@ut.ee",
+        nickname: "kenigbolo"
+    },
+    extra: {
+      raw_info: { 
+        location: "Tartu",
+        gravatar_id: "123456789" }
+    }
+  )
+   
 end
