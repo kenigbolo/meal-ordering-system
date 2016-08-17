@@ -9,6 +9,19 @@
   </head>
 
   <body>
+  
+  	<div id="container">
+  		<div id="user_nav">
+  			<% if current_user %>
+  				Signed in as <strong><%= current_user.name %></strong>
+  				<%= link_to "Sign Out", signout_path, id: "Sign_out" %>
+  			<% else %>
+  				<%= link_to "Facebook Sign in", "/auth/facebook", id: "Sign_out" %>
+  			<% end %>
+  		</div>
+  	</div>
+
     <%= yield %>
+
   </body>
 </html>
