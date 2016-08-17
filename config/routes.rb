@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   end
 
   #Route to root (Default homepage)
-  get '/', to: 'orders#index'
+  get '/', to: 'orders#index', as: 'root'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'signout', to: 'sessions#destroy', as: 'signout'
 end
