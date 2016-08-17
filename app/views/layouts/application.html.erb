@@ -16,7 +16,8 @@
   				Signed in as <strong><%= current_user.name %></strong>
   				<%= link_to "Sign Out", signout_path, id: "Sign_out" %>
   			<% else %>
-  				<%= link_to "Facebook Sign in", "/auth/facebook", id: "Sign_out" %>
+  				<%= link_to "Facebook Sign in", "/auth/facebook", id: "Sign_in" %>
+          <%= link_to "Github Sign in", "/auth/github", id: "Sign_in" %>
   			<% end %>
   		</div>
   	</div>

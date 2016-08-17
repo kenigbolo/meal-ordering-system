@@ -28,7 +28,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
-# gem 'rails_helper'
+
+# Use figaro Gem for ENV Variables
+gem 'figaro' 
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
