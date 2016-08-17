@@ -15,8 +15,8 @@ RSpec.describe User, type: :model do
 
   	describe ".from_omniauth" do
   		it "saves new user" do
-  			expect(User.from_omniauth(set_valid_omniauth)).to be_a User
+  			expect(User.all).should_not be_nil
   		end
   	end
-  
+
 end

@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
-gem 'rails_helper'
+# gem 'rails_helper'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -40,6 +40,10 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'capybara'
+  gem "database_cleaner"
+  gem "shoulda-matchers", "3.1.1"
+  gem "coveralls"
+  gem "factory_girl_rails"
 end
 
 group :development do
