@@ -31,7 +31,8 @@ gem 'omniauth-github'
 
 # Use figaro Gem for ENV Variables
 gem 'figaro' 
-
+# Use for testing rails controller
+gem 'rails-controller-testing'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
