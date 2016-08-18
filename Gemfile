@@ -47,7 +47,6 @@ group :development, :test do
   gem "database_cleaner"
   gem "shoulda-matchers", "3.1.1"
   gem "coveralls", require: false
-  gem "factory_girl_rails"
 end
 
 group :development do
