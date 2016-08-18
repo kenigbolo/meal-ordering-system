@@ -15,7 +15,6 @@ class OrdersController < ApplicationController
 	end
 
 	def edit
-		# binding.pry
 		session[:order_id] = params[:id]
 		@meal = Meal.new
 
@@ -26,7 +25,6 @@ class OrdersController < ApplicationController
 	end
 
 	def update
-		# binding.pry
 		meal = Meal.create(name: params[:name], price: params[:price].to_f, user_id: current_user.id )
 		order = Order.find(session[:order_id])
 
