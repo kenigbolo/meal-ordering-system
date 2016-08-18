@@ -1,4 +1,5 @@
 # MEAL ORDERING SYSTEM
+[![Build Status](https://travis-ci.org/kenigbolo/meal-ordering-system.png)](https://travis-ci.org/kenigbolo/meal-ordering-system)
 
 A single page application (SPA) that coordinates meal ordering for Company employees
 
