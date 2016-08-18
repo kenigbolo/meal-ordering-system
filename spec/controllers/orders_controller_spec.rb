@@ -13,10 +13,4 @@ RSpec.describe OrdersController, type: :controller do
     	expect(response.status).to eq(200)
     end
 
-     describe 'GET #new' do
-	  it 'assigns a new order to @order' do
-	    get :new
-	    expect(assigns(:order)).to be_a_new(Order)
-	  end
-	end
 end
