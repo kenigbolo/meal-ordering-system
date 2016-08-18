@@ -1,0 +1,14 @@
+<% if current_user %>
+	<div id="order-details"></div>
+		<div>
+			<%= link_to "Create Order", new_order_path, id: "new_order", remote: true %>
+		</div>
+		
+		<div>
+		<% @orders.each do |order| %>
+			<%= order.restaurant %>  <%= link_to "Add meal", edit_order_path(id: order.id), remote: true %>
+		<% end %>
+	</div>
+<% end %>
+
+
