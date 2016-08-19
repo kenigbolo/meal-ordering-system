@@ -33,7 +33,7 @@ gem 'omniauth-github'
 gem 'figaro' 
 # Use for testing rails controller
 gem 'rails-controller-testing'
-
+gem 'codecov', :require => false, :group => :test
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
