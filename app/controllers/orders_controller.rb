@@ -40,7 +40,7 @@ class OrdersController < ApplicationController
 
 	def filter
 		filter = params[:filter]
-
+		# binding.pry
 		if filter == "Active"
 			@orders = Order.where("status = ?", filter)
 		else
@@ -50,6 +50,5 @@ class OrdersController < ApplicationController
 			format.html {redirect_to orders_url}
         	format.js
     	end
-		# redirect_to orders_url
 	end
 end
