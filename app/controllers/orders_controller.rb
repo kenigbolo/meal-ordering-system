@@ -11,7 +11,6 @@ class OrdersController < ApplicationController
 
 	def create
 		@order = Order.create(restaurant: params[:order][:restaurant], status: "Active", meal_order: [])
-		flash[:notice] = "Order created Successfully"
 		redirect_to orders_url
 	end
 
@@ -40,7 +39,6 @@ class OrdersController < ApplicationController
 
 		order.meal_order.push(meal)
 		order.save
-		flash[:notice] = "Meal added Successfully"
 		redirect_to orders_url
 	end
 
@@ -54,7 +52,6 @@ class OrdersController < ApplicationController
 			@orders = Order.where("status = ?", filter)
 		else
 			@orders = Order.where.not("status = ?", "Active")
-			# binding.pry
 		end
 		respond_to do |format|
 			format.html {redirect_to orders_url}
