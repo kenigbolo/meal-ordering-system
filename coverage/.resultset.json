@@ -11,7 +11,6 @@
       ],
       "/home/kenigbolo/Desktop/meal-ordering-system/app/controllers/orders_controller.rb": [
         1,
-        null,
         1,
         2,
         null,
@@ -50,10 +49,8 @@
         1,
         1,
         1,
-        null,
         1,
         0,
-        null,
         null,
         null
       ],
@@ -85,46 +82,8 @@
         null,
         null,
         null
-      ],
-      "/home/kenigbolo/Desktop/meal-ordering-system/app/mailers/application_mailer.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/kenigbolo/Desktop/meal-ordering-system/app/controllers/sessions_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/kenigbolo/Desktop/meal-ordering-system/app/channels/application_cable/channel.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/kenigbolo/Desktop/meal-ordering-system/app/channels/application_cable/connection.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/kenigbolo/Desktop/meal-ordering-system/app/jobs/application_job.rb": [
-        0,
-        0
       ]
     },
-    "timestamp": 1471596822
+    "timestamp": 1471601365
   }
 }
