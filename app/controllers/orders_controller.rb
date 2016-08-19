@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+
 	def index
 		@orders = Order.all
 	end
@@ -30,5 +31,9 @@ class OrdersController < ApplicationController
 		order.meal_order.push(meal)
 		order.save
 		redirect_to orders_url
+	end
+
+	def show
+		@order = Order.find(params[:id])
 	end
 end
