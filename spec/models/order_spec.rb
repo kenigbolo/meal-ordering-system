@@ -13,4 +13,13 @@ RSpec.describe Order, type: :model do
 			  assert order.save
 			end
 		end
+
+		describe "#update" do
+			order.save
+			it "should update existing order" do
+				meal = Meal.create(name: "Meal", price: 20.0, user_id: "1")
+				order.meal_order.push(meal)
+				assert order.save
+			end
+		end
 end
