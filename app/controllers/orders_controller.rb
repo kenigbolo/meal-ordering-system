@@ -25,10 +25,11 @@ class OrdersController < ApplicationController
 	end
 
 	def update
-		meal = Meal.create(name: params[:name], price: params[:price].to_f, user_id: current_user.id )
+		meal = Meal.create(name: params[:meal][:name], price: params[:meal][:price].to_f, user_id: current_user.id )
 		order = Order.find(session[:order_id])
 
 		order.meal_order.push(meal)
+		order.save
 		redirect_to orders_url
 	end
 end

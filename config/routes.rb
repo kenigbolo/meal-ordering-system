@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/', to: 'orders#index', as: 'root'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'signout', to: 'sessions#destroy', as: 'signout'
+  post '/orders/:id', to: 'orders#update'
 end

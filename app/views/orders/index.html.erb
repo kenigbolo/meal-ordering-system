@@ -5,8 +5,17 @@
 		</div>
 		
 		<div>
-		<% @orders.each do |order| %>
-			<%= order.restaurant %>  <%= link_to "Add meal", edit_order_path(id: order.id), remote: true %>
+		<% unless @orders.empty? %>
+			<% @orders.each do |order| %>
+				<%= order.restaurant %>  <%= link_to "Add meal", edit_order_path(id: order.id), remote: true %>
+				<% unless order.meal_order.empty? %>
+					<% order.meal_order.each do |meal| %>
+						<div>
+							<p>Meal Name: <%= meal.name %> Meal Price: <%= meal.price %> Ordered by: <%= meal.user.name %></p>
+						</div>
+					<% end %>
+				<% end %>
+			<% end %>
 		<% end %>
 	</div>
 <% end %>
