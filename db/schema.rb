@@ -24,10 +24,9 @@ ActiveRecord::Schema.define(version: 20160818213311) do
   create_table "orders", force: :cascade do |t|
     t.string   "restaurant"
     t.text     "meal_order"
-    t.string   "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
+    t.string   "status"
   end
 
   create_table "users", force: :cascade do |t|

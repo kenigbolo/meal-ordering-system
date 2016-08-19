@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+	require_dependency 'yaml'
 
 	def index
 		@orders = Order.all
@@ -11,13 +12,21 @@ class OrdersController < ApplicationController
 	def create
 		@order = Order.create(restaurant: params[:order][:restaurant], status: "Active", meal_order: [])
 		flash[:notice] = "Order created Successfully"
-		# binding.pry
 		redirect_to orders_url
 	end
 
 	def edit
 		session[:order_id] = params[:id]
+		order = Order.where("id = ?", params[:id])[0]
+		@can_add = true
 		@meal = Meal.new
+		
+		order.meal_order.each do |meal|
+			if meal.user.id == current_user.id
+				@can_add = false
+			end
+		end
+
 
 		respond_to do |format|
 			format.html {redirect_to orders_url}

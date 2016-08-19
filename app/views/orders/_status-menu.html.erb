@@ -1,0 +1,9 @@
+<%= form_tag("/status", method: "post", remote: true) do %>
+	<select name="status" id="status">
+	  <option value="Ordered">Ordered</option>
+	  <option value="Delivered">Delivered</option>
+	  <option value="Archived">Finalized</option>
+	</select>
+	<%= hidden_field_tag 'id', @order.id %>
+	<%= submit_tag("Set Status") %>
+<% end %>

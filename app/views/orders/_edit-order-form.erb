@@ -1,10 +1,15 @@
 <div class="container">
 	<div class="row">
+		<% if @can_add != false %>
 		<h2>Add Meal</h2>
-		<%= form_for @meal, remote: true, url: {action: "update"}, html: {id: "edit_order_form"} do |f| %>
-		  <%= f.text_field :name %>
-		  <%= f.text_field :price %>
-		  <%= f.submit "Add meal" %>
-		<% end %>	 
+			<%= form_for @meal, remote: true, url: {action: "update"}, html: {id: "edit_order_form"} do |f| %>
+			  <%= f.text_field :name %>
+			  <%= f.text_field :price %>
+			  <%= f.submit "Add meal" %>
+			<% end %>
+		<% else %>
+			<h5>You cannot add any more meals to this Order </h5>
+		<% end %>
+
 	</div>
 </div>

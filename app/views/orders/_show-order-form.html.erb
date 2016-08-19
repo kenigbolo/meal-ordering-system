@@ -1,45 +1,36 @@
 <div id="add-meal">
 	<h2>Restaurant Name: <%= @order.restaurant %> </h2> 
+	
 	<% if @order.status == "Active" %>
 		<%= link_to "Add meal", edit_order_path(id: @order.id), remote: true %>
+		<% unless @order.meal_order.empty? %>
+			<%= render "status-menu" %>
+		<% end %>
+
+	<% elsif @order.status == "Ordered" %>
+		<%= form_tag("/status", method: "post", remote: true) do %>
+			<select name="status" id="status">
+			  <option value="Delivered">Delivered</option>
+			  <option value="Archived">Finalized</option>
+			</select>
+			<%= hidden_field_tag 'id', @order.id %>
+			<%= submit_tag("Set Status") %>
+		<% end %>
+	
+	<% elsif @order.status == "Delivered" %>
+		<%= form_tag("/status", method: "post", remote: true) do %>
+			<select name="status" id="status">
+			  <option value="Archived">Finalized</option>
+			</select>
+			<%= submit_tag("Set Status") %>
+			<%= hidden_field_tag 'id', @order.id %>
+		<% end %>
 	<% end %>
 
 	<% unless @order.meal_order.empty? %>
 		<% @order.meal_order.each do |meal| %>
 			<div>
 				<li>Meal Name: <%= meal.name %> Meal Price: <%= meal.price %> Ordered by: <%= meal.user.name %></li>
-
-			<% if @order.status == "Active" %>
-				<%= form_tag("/status", method: "post", remote: true) do %>
-					<select name="status" id="status">
-					  <option value="Ordered">Ordered</option>
-					  <option value="Delivered">Delivered</option>
-					  <option value="Archived">Finalized</option>
-					</select>
-					<%= hidden_field_tag 'id', @order.id %>
-					<%= submit_tag("Modify") %>
-				<% end %>
-
-			<% elsif @order.status == "Ordered" %>
-				<%= form_tag("/status", method: "post", remote: true) do %>
-					<select name="status" id="status">
-					  <option value="Delivered">Delivered</option>
-					  <option value="Archived">Finalized</option>
-					</select>
-					<%= hidden_field_tag 'id', @order.id %>
-					<%= submit_tag("Modify") %>
-				<% end %>
-			
-			<% elsif @order.status == "Delivered" %>
-				<%= form_tag("/status", method: "post", remote: true) do %>
-					<select name="status" id="status">
-					  <option value="Archived">Finalized</option>
-					</select>
-					<%= submit_tag("Modify") %>
-					<%= hidden_field_tag 'id', @order.id %>
-				<% end %>
-
-			<% end %>
 
 			</div>
 		<% end %>
