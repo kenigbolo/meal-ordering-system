@@ -1,5 +1,6 @@
 <div id="add-meal">
-	<%= @order.restaurant %>  <%= link_to "Add meal", edit_order_path(id: @order.id), remote: true %>
+	<h2>Restaurant Name: <%= @order.restaurant %> </h2> 
+	<%= link_to "Add meal", edit_order_path(id: @order.id), remote: true %>
 	<% unless @order.meal_order.empty? %>
 		<% @order.meal_order.each do |meal| %>
 			<div>

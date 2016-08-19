@@ -30,10 +30,26 @@ class OrdersController < ApplicationController
 
 		order.meal_order.push(meal)
 		order.save
+		flash[:notice] = "Meal added Successfully"
 		redirect_to orders_url
 	end
 
 	def show
 		@order = Order.find(params[:id])
+	end
+
+	def filter
+		filter = params[:filter]
+
+		if filter == "Active"
+			@orders = Order.where("status = ?", filter)
+		else
+			@orders = Order.where("status != ?", filter)
+		end
+		respond_to do |format|
+			format.html {redirect_to orders_url}
+        	format.js
+    	end
+		# redirect_to orders_url
 	end
 end

@@ -5,14 +5,24 @@
 		</div>
 	</div>	
 
-		<div id="show-order-details">
-			<% unless @orders.empty? %>
-				<% @orders.each do |order| %>
-					<%= order.restaurant %>  <%= link_to "Show Order", order_path(id: order.id), remote: true %>
-				<% end %>
+	<div id="show-order-details">
+		<% unless @orders.empty? %>
+			<% @orders.each do |order| %>
+				<%= order.restaurant %>  <%= link_to "Show Order", order_path(id: order.id), remote: true %>
 			<% end %>
-		</div>
-
+		<% end %>
+	</div>
+	
+	<div id="filter-order">
+		<h5>Filter Orders</h5>
+		<%= form_tag("/filter", method: "post", remote: true) do %>
+			<select name="filter" id="filter">
+			  <option value="Active">Active</option>
+			  <option value="Archived">Archived</option>
+			</select>
+			<%= submit_tag("Filter") %>
+		<% end %>
+	</div>
 <% end %>
 
 
