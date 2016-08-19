@@ -15,4 +15,8 @@ RSpec.describe Order, type: :model do
 				assert order.save
 			end
 		end
+
+	  it "is valid with valid attributes" do
+	    expect(Order.new).to be_valid
+	  end
 end
