@@ -18,5 +18,5 @@ RSpec.describe User, type: :model do
   			expect(User.all).should_not be_nil
   		end
   	end
-
+    
 end

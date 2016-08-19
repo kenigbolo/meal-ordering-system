@@ -16,7 +16,7 @@ RSpec.describe Order, type: :model do
 			end
 		end
 
-	  it "is valid with valid attributes" do
-	    expect(Order.new).to be_valid
-	  end
+	  	it "is valid with valid attributes" do
+	    	expect(Order.new).to be_valid
+	  	end
 end

@@ -18,4 +18,16 @@ meal = Meal.new(user_id: "1")
 	  meal.save
 	  expect(meal).to_not be_valid
 	end
+
+	describe "Associations" do
+	  it "belongs to a User" do
+	    assc = described_class.reflect_on_association(:user)
+	    expect(assc.macro).to eq :belongs_to
+	  end
+
+	  it "belongs to a User" do
+	    assc = described_class.reflect_on_association(:user)
+	    expect(assc.macro).to eq :belongs_to
+	  end
+	end
 end
