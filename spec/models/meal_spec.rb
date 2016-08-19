@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Meal, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+ #  	test "should not save meal without user_id" do
+	#   meal = Meal.new
+	#   assert_not meal.save
+	# end
+
 end
