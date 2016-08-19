@@ -1,9 +1,9 @@
-Working!!!
 <div id="filtered-order">
 	<% unless @orders.empty? %>
 		<% @orders.each do |order| %>
 			<%= order.restaurant %>  <%= link_to "Show Order", order_path(id: order.id), remote: true %>
 		<% end %>
+	<% else %>
+		<h4> No available orders match your query </h4>
 	<% end %>
-	<%= link_to "Home", orders_path, remote: true %>
 </div>

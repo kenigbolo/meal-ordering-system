@@ -44,7 +44,7 @@ class OrdersController < ApplicationController
 		if filter == "Active"
 			@orders = Order.where("status = ?", filter)
 		else
-			@orders = Order.where("status != ?", filter)
+			@orders = Order.where.not("status != ?", filter)
 		end
 		respond_to do |format|
 			format.html {redirect_to orders_url}
