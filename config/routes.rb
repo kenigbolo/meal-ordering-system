@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
   post '/orders/:id', to: 'orders#update'
   post '/filter', to: 'orders#filter'
+  post '/status', to: 'orders#status'
 end

@@ -9,8 +9,9 @@ class OrdersController < ApplicationController
 	end
 
 	def create
-		@order = Order.create(restaurant: params[:order][:restaurant], meal_order: [], status: "Active")
+		@order = Order.create(restaurant: params[:order][:restaurant], status: "Active", meal_order: [])
 		flash[:notice] = "Order created Successfully"
+		# binding.pry
 		redirect_to orders_url
 	end
 
@@ -40,15 +41,22 @@ class OrdersController < ApplicationController
 
 	def filter
 		filter = params[:filter]
-		# binding.pry
 		if filter == "Active"
 			@orders = Order.where("status = ?", filter)
 		else
-			@orders = Order.where.not("status != ?", filter)
+			@orders = Order.where.not("status = ?", "Active")
+			# binding.pry
 		end
 		respond_to do |format|
 			format.html {redirect_to orders_url}
         	format.js
     	end
+	end
+
+	def status
+		order = Order.find(params[:id])
+		order.status = params[:status]
+		order.save
+		redirect_to orders_url
 	end
 end
