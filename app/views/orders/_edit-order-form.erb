@@ -4,7 +4,7 @@
 		<h2>Add Meal</h2>
 			<%= form_for @meal, remote: true, url: {action: "update"}, html: {id: "edit_order_form"} do |f| %>
 			  <%= f.text_field :name %>
-			  <%= f.text_field :price %>
+			  <%= f.number_field :price %>
 			  <%= f.submit "Add meal" %>
 			<% end %>
 		<% else %>

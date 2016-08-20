@@ -5,7 +5,7 @@ RSpec.describe SessionsController, type: :controller do
 user = User.new
 	describe "GET index" do
 	  context "When user is not signed in" do
-	    it "Show have no user in the session" do
+	    it "Should have no user in the session" do
 	  	  expect(session[:user_id]).to eq(nil)
 	    end
 	  end
