@@ -1,7 +1,0 @@
-languages:
-  Ruby: true
-exclude_paths:
-- "app/assets/javascripts/particles.js"
-- "app/assets/javascripts/bootstrap.js"
-- "app/assets/javascripts/bootstrap.min.js"
-- "app/assets/stylesheets/bootstrap.css"
