@@ -26,10 +26,10 @@ class OrdersController < ApplicationController
 			end
 		end
 
-		respond_to do |format|
-			format.html {redirect_to orders_url}
+        respond_to do |format|
+        	format.html {redirect_to orders_url}
         	format.js
-    	end
+        end
 	end
 
 	def update
