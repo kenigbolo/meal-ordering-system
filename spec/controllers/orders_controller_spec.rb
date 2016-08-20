@@ -40,17 +40,26 @@ order = FactoryGirl.create :order
 	  it "is valid with valid attributes" do
 	    expect(Order.new).to be_valid
 	  end
+
+	  it "should render default single page template" do
+	    get :index
+	    expect(response).to render_template(:index)  
+	  end
+
+	  it "returns the OK status code" do
+	    expect(response.status).to eq(200)
+	  end
 	end
 
 	describe "#index" do
-		it "renders the index template" do
-	      get :index
-	      expect(response).to render_template(:index)  
-	    end
+	  it "renders the index template" do
+	    get :index
+	    expect(response).to render_template(:index)  
+	  end
 
-	  	it "returns the OK status code" do
-	  	  expect(response.status).to eq(200)
-	  	end
+	  it "returns the OK status code" do
+	    expect(response.status).to eq(200)
+	  end
 	end
 
 	describe "#status" do
@@ -67,5 +76,20 @@ order = FactoryGirl.create :order
 	  it "should return an OK status code" do
 	  	expect(response.status).to eq(200)
 	  end	  
+	end
+
+	describe "#show" do
+	  it "is valid with valid attributes" do
+	    expect(Order.new).to be_valid
+	  end
+
+	  it "should render default single page template" do
+	    get :index
+	    expect(response).to render_template(:index)  
+	  end
+	  
+	  it "returns the OK status code" do
+	    expect(response.status).to eq(200)
+	  end
 	end
 end
