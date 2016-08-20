@@ -13,11 +13,13 @@ meal = Meal.new
       end      
     end
 
-    context "When a meal details are saved" do  
-      it "is expected to save a meal object" do
+    context "When a meal details are saved" do 
+      before(:each) do
       	meal.user_id = "1"
       	meal.save
-        expect(meal).to be_a_new(Meal)
+      end 
+      it "is expected to save a meal object" do  	
+        expect(meal).to be_a(Meal)
       end
 
       it "is expected to save all meal properties defined" do
@@ -27,19 +29,8 @@ meal = Meal.new
         expect(meal.price).to eq(20.0)
       end
 
-      it "is not valid without a creation date" do
-		meal.created_at = nil
-	    meal.save
-		expect(meal).to_not be_valid
-	  end
-
-	  it "is not valid without a date for updated_at" do
-		meal.updated_at = nil
-		meal.save
-		expect(meal).to_not be_valid
-	  end
-
 	  it "is not valid without a User ID" do
+	  	meal.user_id = nil
 	  	meal.save
 		expect(meal).to_not be_valid
 	  end
