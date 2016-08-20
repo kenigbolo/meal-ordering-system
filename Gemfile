@@ -34,7 +34,7 @@ gem 'figaro'
 # Use for testing rails controller
 gem 'rails-controller-testing'
 gem 'codecov', :require => false, :group => :test
-gem "codeclimate-test-reporter", group: :test, require: nil
+gem "codeclimate-test-reporter", group: :test, require: false
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
