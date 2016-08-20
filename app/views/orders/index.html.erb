@@ -16,13 +16,11 @@
 				  </div>
 				  <div class="panel-body">
 
-					<%= form_tag("/filter", method: "post", remote: true) do %>
-					  <div class="form-group">
+					<%= form_tag("/filter", method: "post", remote: true, class: "form-group") do %>
 						<select name="filter" id="filter" class="form-control input-sm">
 						  <option value="Active">Active</option>
 						  <option value="Archived">Archived</option>
 						</select>
-					  </div>
 						<%= submit_tag "Filter", class: "btn btn-info btn-block" %>
 					<% end %>
 
@@ -64,6 +62,7 @@
 			  </div>
 			</div>
 		</div>
+
 	<% end %>
 	</div>
 </div>

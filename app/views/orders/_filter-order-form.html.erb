@@ -1,9 +1,30 @@
 <div id="filtered-order">
-	<% unless @orders.empty? %>
-		<% @orders.each do |order| %>
-			<%= order.restaurant %>  <%= link_to "Show Order", order_path(id: order.id), remote: true %>
+	<div class="row centered-form">
+		<div class="panel panel-default">
+		  <% unless @orders.empty? %>
+			  <table class="table table-hover table-bordered">
+			    <thead>
+			      <tr>
+			    	<td><strong>Restuarant Name</strong></td>
+			    	<td></td>
+			      </tr>
+			    </thead>
+
+			    <tbody>
+				<% @orders.each do |order| %>
+	  		    <tr>
+				  <td> <%= order.restaurant %> </td>   
+				  <td> <%= link_to "Show", order_path(id: order.id), remote: true, class: "btn btn-info btn-block" %></td>
+				</tr>
+				<% end %>
+		    </tbody>
+		  </table>
+		</div>
+
+		<% else %>
+			  <div class="panel-heading">
+	  			<h3 class="panel-title"><strong>No available orders match your query</strong></h3>
+	  		  </div>
 		<% end %>
-	<% else %>
-		<h4> No available orders match your query </h4>
-	<% end %>
+	</div>
 </div>

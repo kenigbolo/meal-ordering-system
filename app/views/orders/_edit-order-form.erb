@@ -1,15 +1,30 @@
-<div class="container">
-	<div class="row">
-		<% if @can_add != false %>
-		<h2>Add Meal</h2>
-			<%= form_for @meal, remote: true, url: {action: "update"}, html: {id: "edit_order_form", class: "form-group"} do |f| %>
-			  <%= f.text_field :name %>
-			  <%= f.number_field :price %>
-			  <%= f.submit "Add meal", class: "btn btn-info btn-block" %>
-			<% end %>
-		<% else %>
-			<h5>You cannot add any more meals to this Order </h5>
-		<% end %>
+<div class="row centered-form">
+	<div class="panel panel-default">
+	<% if @can_add != false %>
+		
+		<div class="panel-heading">
+			<h3 class="panel-title"><strong>Add Meal</strong></h3>
+		</div>
+		
+		<div class="panel-body">
+		  <%= form_for @meal, remote: true, url: {action: "update"}, html: {id: "edit_order_form", class: "form-group"} do |f| %>
+			
+			<%= f.label :name %>:
+			<%= f.text_field :name, class: "form-control input-sm"  %>
+			<div class="panel-body"></div>
+			
+			<%= f.label :price %>:
+			<%= f.number_field :price, class: "form-control input-sm" %>
+			<div class="panel-body"></div>
+			  
+			<%= f.submit "Place Order", class: "btn btn-info btn-block" %>
+		  <% end %>
+	<% else %>
+		<div class="panel-heading">
+			<h3 class="panel-title"><strong>You cannot add any more meals to this Order</strong></h3>
+		</div>
+	<% end %>
 
+	  </div>
 	</div>
 </div>
