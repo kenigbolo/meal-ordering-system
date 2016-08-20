@@ -8,4 +8,6 @@ SimpleCov.start do
    add_filter 'app/jobs'
    add_filter 'app/mailers'
    add_filter 'app/controllers/sessions_controller.rb'
+   add_filter 'app/secrets'
 end
+
