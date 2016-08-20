@@ -14,4 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap.min
+//= require particles.js
 //= require_tree .
+
+particlesJS.load('particles-js', 'assets/particle.json', function() {
+console.log('callback - particles.js config loaded');
+});
