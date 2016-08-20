@@ -59,6 +59,7 @@ class OrdersController < ApplicationController
 	end
 
 	def status
+		binding.pry
 		order = Order.find(params[:id])
 		order.status = params[:status]
 		order.save
