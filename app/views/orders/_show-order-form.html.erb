@@ -1,38 +1,57 @@
 <div id="add-meal">
-	<h2>Restaurant Name: <%= @order.restaurant %> </h2> 
+
+	<div class="row centered-form">
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+			<h3 class="panel-title"><strong><%= @order.restaurant %></strong></h3>
+		  </div>
+		  <div class="panel-body"> 
 	
-	<% if @order.status == "Active" %>
-		<%= link_to "Add meal", edit_order_path(id: @order.id), remote: true %>
-		<% unless @order.meal_order.empty? %>
-			<%= render "status-menu" %>
-		<% end %>
+			<% if @order.status == "Active" %>
+				<%= link_to "Add meal", edit_order_path(id: @order.id), remote: true, class: "btn btn-info btn-block"%>
+				<div class="panel-body"></div>
+				<% unless @order.meal_order.empty? %>
+					<%= render "active-status-menu" %>
+				<% end %>
+			<% elsif @order.status == "Ordered" %>
+				<%= render "ordered-status-menu" %>			
+			<% elsif @order.status == "Delivered" %>
+				<%= render "delivered-status-menu" %>	
+			<% end %>
 
-	<% elsif @order.status == "Ordered" %>
-		<%= form_tag("/status", method: "post", remote: true) do %>
-			<select name="status" id="status">
-			  <option value="Delivered">Delivered</option>
-			  <option value="Archived">Finalized</option>
-			</select>
-			<%= hidden_field_tag 'id', @order.id %>
-			<%= submit_tag("Set Status") %>
-		<% end %>
-	
-	<% elsif @order.status == "Delivered" %>
-		<%= form_tag("/status", method: "post", remote: true) do %>
-			<select name="status" id="status">
-			  <option value="Archived">Finalized</option>
-			</select>
-			<%= submit_tag("Set Status") %>
-			<%= hidden_field_tag 'id', @order.id %>
-		<% end %>
-	<% end %>
+		  </div>
+	  	</div>
+	</div>
 
-	<% unless @order.meal_order.empty? %>
-		<% @order.meal_order.each do |meal| %>
-			<div>
-				<li>Meal Name: <%= meal.name %> Meal Price: <%= meal.price %> Ordered by: <%= meal.user.name %></li>
+	<div id="show-order-details">
+		<div class="row centered-form">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+	  			<h3 class="panel-title">Meal List</h3>
+	  		  </div>
+	  		  <table class="table table-hover table-bordered">
+	  		    <thead>
+	  		      <tr>
+	  		    	<td><strong>Name</strong></td>
+	  		    	<td><strong>Price</strong></td>
+	  		    	<td><strong>Ordered by</strong></td>
+	  		      </tr>
+	  		    </thead>
 
+	  		    <tbody>
+	  		    	<% unless @order.meal_order.empty? %>
+						<% @order.meal_order.each do |meal| %>
+		  		    	<tr>
+						  <td> <%= meal.name %> </td>   
+						  <td> <%= meal.price %> </td>
+						  <td> <%= meal.user.name %> </td>
+						</tr>
+						<% end %>
+				    <% end %>
+			    </tbody>
+			  </table>
 			</div>
-		<% end %>
-	<% end %>
+		</div>
+	</div>
+
 </div>

@@ -1,9 +1,10 @@
+<div class="form-group">
 <%= form_tag("/status", method: "post", remote: true) do %>
-	<select name="status" id="status">
-	  <option value="Ordered">Ordered</option>
+	<select name="status" id="status" class="form-control input-sm">
 	  <option value="Delivered">Delivered</option>
 	  <option value="Archived">Finalized</option>
 	</select>
+</div>
 	<%= hidden_field_tag 'id', @order.id %>
-	<%= submit_tag("Set Status") %>
+	<%= submit_tag "Set Status", class: "btn btn-info btn-block"%>
 <% end %>
