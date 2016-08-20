@@ -52,9 +52,10 @@ class OrdersController < ApplicationController
 		else
 			@orders = Order.where.not("status = ?", "Active")
 		end
-		respond_to do |format|
-			format.html {redirect_to orders_url}
-        	format.js
+
+    	respond_to do |format|
+    		format.html{redirect_to orders_url}
+    		format.js
     	end
 	end
 
