@@ -1,32 +1,70 @@
-<% if current_user %>
-	<div id="order-details">
-		<div>
-			<%= link_to "Create Order", new_order_path, id: "new_order", remote: true %>
+<div id="content">
+	<div class="container">
+	<% if current_user %>
+		<div id="order-details" class="row">
+			<div class="col-md-4 col-md-offset-4 create-order">
+				<%= link_to "Create Order", new_order_path, id: "new_order", remote: true, class: "btn btn-info btn-block" %>
+			</div>
 		</div>
+
+		<div id="filter-order">
+			<div class="row centered-form">
+			  <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+				<div class="panel panel-default">
+				  <div class="panel-heading">
+					<h3 class="panel-title"><strong>Filter Orders</strong></h3>
+				  </div>
+				  <div class="panel-body">
+
+					<%= form_tag("/filter", method: "post", remote: true) do %>
+					  <div class="form-group">
+						<select name="filter" id="filter" class="form-control input-sm">
+						  <option value="Active">Active</option>
+						  <option value="Archived">Archived</option>
+						</select>
+					  </div>
+						<%= submit_tag "Filter", class: "btn btn-info btn-block" %>
+					<% end %>
+
+				  </div>
+				</div>
+			  </div>
+			</div>
+		</div>	
+
+		<div id="show-order-details">
+			<div class="row centered-form">
+			  <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+				<div class="panel panel-default">
+				  <div class="panel-heading">
+		  			<h3 class="panel-title">Active Orders</h3>
+		  		  </div>
+		  		  <table class="table table-hover table-bordered">
+		  		    <thead>
+		  		      <tr>
+		  		    	<td><strong>Restuarant Name</strong></td>
+		  		    	<td><strong>Details</strong></td>
+		  		      </tr>
+		  		    </thead>
+
+		  		    <tbody>
+		  		    	<% unless @orders.empty? %>
+						<% @orders.each do |order| %>
+			  		    <tr>
+							<% if order.status == "Active" %>
+							  <td> <%= order.restaurant %> </td>   
+							  <td> <%= link_to "Show", order_path(id: order.id), remote: true, class: "btn btn-info btn-block" %></td>
+							<% end %>
+						  <% end %>
+					    </tr>
+					    <% end %>
+				    </tbody>
+				  </table>
+				</div>
+			  </div>
+			</div>
+		</div>
+
+	<% end %>
 	</div>
-
-	<div id="filter-order">
-		<h5>Filter Orders</h5>
-		<%= form_tag("/filter", method: "post", remote: true) do %>
-			<select name="filter" id="filter">
-			  <option value="Active">Active</option>
-			  <option value="Archived">Archived</option>
-			</select>
-			<%= submit_tag("Filter") %>
-		<% end %>
-	</div>	
-
-	<div id="show-order-details">
-	  <h3>Active Orders</h3>
-		<% unless @orders.empty? %>
-		  <% @orders.each do |order| %>
-			<% if order.status == "Active" %>
-			  <li> <%= order.restaurant %>  <%= link_to "Show Order", order_path(id: order.id), remote: true %></li>
-			<% end %>
-		  <% end %>
-	  <% end %>
-	</div>
-	
-<% end %>
-
-
+</div>

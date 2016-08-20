@@ -1,3 +1,42 @@
 // Place all the styles related to the Orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  text-align: center;
+  margin-top: 5px;
+}
+
+#page-wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+#filter-order {
+	margin-top: 5em;
+}
+
+#content {
+	margin-top: 2em;
+	background-color: orange;
+	max-width: 1240px;
+	text-align: center;
+}
+
+.create-order {
+	margin-top: 2em;
+}
+.left-div {
+    white-space:nowrap;
+    margin-top: 0.5em;
+}
+
+.centered-form{
+  margin-top: 60px;
+}
+
+.centered-form .panel{
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+
