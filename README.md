@@ -1,5 +1,5 @@
 # MEAL ORDERING SYSTEM
-[![Build Status](https://travis-ci.org/kenigbolo/meal-ordering-system.png)](https://travis-ci.org/kenigbolo/meal-ordering-system) [![CircleCI](https://circleci.com/gh/kenigbolo/meal-ordering-system.svg?style=svg)](https://circleci.com/gh/kenigbolo/meal-ordering-system) [![Coverage Status](https://coveralls.io/repos/github/kenigbolo/meal-ordering-system/badge.svg?branch=master&bust=1)](https://coveralls.io/github/kenigbolo/meal-ordering-system?branch=master)
+[![Build Status](https://travis-ci.org/kenigbolo/meal-ordering-system.png)](https://travis-ci.org/kenigbolo/meal-ordering-system) [![CircleCI](https://circleci.com/gh/kenigbolo/meal-ordering-system.svg?style=svg)](https://circleci.com/gh/kenigbolo/meal-ordering-system) [![Coverage Status](https://coveralls.io/repos/github/kenigbolo/meal-ordering-system/badge.svg?branch=master&bust=1)](https://coveralls.io/github/kenigbolo/meal-ordering-system?branch=master) [![Coverage](https://img.shields.io/coveralls/jekyll/jekyll.svg)](https://img.shields.io/coveralls/jekyll/jekyll.svg)
 
 
 A single page application (SPA) that coordinates meal ordering for Company employees
