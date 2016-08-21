@@ -21,7 +21,9 @@
         
         <div class="col-md-2">
           <% unless current_user == nil %>
-            <%= link_to "Home", orders_path, class: "btn btn-info btn-block" %>
+            <% unless current_page?('/') || current_page?('/orders') %>
+              <%= link_to "Home", orders_path, class: "btn btn-info btn-block" %>
+            <% end %>
           <% end %>
         </div> 
 
