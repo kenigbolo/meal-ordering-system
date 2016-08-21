@@ -7,7 +7,7 @@
 
 		<%= form_for @order, remote: true, url: {action: "create"}, html: {id: "new_order_form", class: "form-group"} do |f| %>
 		  <%= f.label :restaurant %>:
-		  <%= f.text_field :restaurant, class: "form-control input-sm" %>
+		  <%= f.text_field :restaurant, class: "form-control input-sm", required: true %>
 		  <div class="panel-body"></div>
 		  <%= hidden_field_tag 'id', current_user.id %>
 		  <%= f.submit "Create", class: "btn btn-info btn-block" %>

@@ -10,11 +10,11 @@
 		  <%= form_for @meal, remote: true, url: {action: "update"}, html: {id: "edit_order_form", class: "form-group"} do |f| %>
 			
 			<%= f.label :name %>:
-			<%= f.text_field :name, class: "form-control input-sm"  %>
+			<%= f.text_field :name, class: "form-control input-sm", required: true %>
 			<div class="panel-body"></div>
 			
 			<%= f.label :price %>:
-			<%= f.number_field :price, class: "form-control input-sm", step: "any" %>
+			<%= f.number_field :price, class: "form-control input-sm", step: "any", required: true %>
 			<div class="panel-body"></div>
 			  
 			<%= f.submit "Place Order", class: "btn btn-info btn-block" %>
