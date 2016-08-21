@@ -7,6 +7,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag 'favicon.ico' %>
+    <script src="https://use.fontawesome.com/050a679357.js"></script>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
 
     <script>
     $(document).ready(function(){
@@ -48,8 +51,16 @@
         <!-- Sign In / Sign up buttons -->
         <% else %>
             <div class="nav navbar-nav navbar-right">
-              <%= link_to "Facebook Sign in", "/auth/facebook", class: "btn btn-info navbar-btn" %>
-              <%= link_to "Github Sign in", "/auth/github", class: "btn btn-info navbar-btn" %>
+
+              <a class="btn btn-social btn-facebook navbar-btn" href="/auth/facebook">
+                <span class="fa fa-facebook"></span> Sign in with Facebok
+              </a>
+
+              <a class="btn  btn-social btn-github navbar-btn" href="/auth/github">
+                <span class="fa fa-github"></span> Sign in with Github
+              </a>
+            
+
             </div>
         <% end %>
         <!-- End of Sign In / Sign up buttons -->
