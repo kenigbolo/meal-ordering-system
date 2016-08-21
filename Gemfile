@@ -26,8 +26,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+# Add Gems for OAuth
+gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
+gem 'omniauth-bitbucket2', '~> 1.0'
 
 # Use figaro Gem for ENV Variables
 gem 'figaro' 
