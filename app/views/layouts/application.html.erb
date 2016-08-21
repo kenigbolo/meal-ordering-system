@@ -10,12 +10,13 @@
     <script src="https://use.fontawesome.com/050a679357.js"></script>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-
+    <!-- Script to fade out flash messages -->
     <script>
-    $(document).ready(function(){
-      $("#flash").fadeOut(3000);
-    });
+      $(document).ready(function(){
+        $("#flash").fadeOut(3000);
+      });
     </script>
+    <!-- End of Script to fade out flash messages -->
   
   </head>
 
@@ -59,12 +60,13 @@
               <a class="btn  btn-social btn-github navbar-btn" href="/auth/github">
                 <span class="fa fa-github"></span> Sign in with Github
               </a>
-            
+              <a class="btn  btn-social btn-bitbucket navbar-btn" href="/auth/bitbucket">
+                <span class="fa fa-bitbucket"></span> Sign in with Bitbucket
+              </a>            
 
             </div>
         <% end %>
         <!-- End of Sign In / Sign up buttons -->
-
       </div>
     </nav>
     <!-- End of Navigation Bar -->
