@@ -19,16 +19,23 @@ Once you have those two, you can then run your command line and navigate into th
 * Run ```rake db:migrate```
 * Run ```rake db:seed ```
 
+## Running The Server
+
+Due to the use of the ```figaro gem``` for environment variables used in omniauth the following should be performed
+
+* Download the application.yml file [here](https://www.dropbox.com/s/lby7uq1tsbpqyvk/application.yml?dl=0)
+* Put the downloaded ```application.yml``` file into the ```config``` folder
+
 You can then run ```rails s``` and visit the page on the browser by typing ```localhost:3000```
 
 ##Running The Specs
 After all the setting up as mentioned above, you can run the tests. The tests are driven by rspec, capybara and selenium. You can get them fired up by running the following command from the terminal.
 
-rspec spec
+```rspec spec```
 
 or
 
-bundle exec rspec
+```bundle exec rspec```
 
 ##Application Features
 
