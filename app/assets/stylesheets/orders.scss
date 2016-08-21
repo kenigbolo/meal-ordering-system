@@ -27,7 +27,7 @@ body {
 }
 .left-div {
     white-space:nowrap;
-    margin-top: 0.5em;
+    margin-top: 1em;
 }
 
 .centered-form{
@@ -39,3 +39,21 @@ body {
   box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
 }
 
+.image-logo {
+  height: 50px;
+  width: 75px;
+  margin-top: -16px;
+  padding-top: 0.23em;
+}
+
+.navbar-btn {
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+.navbar-center {
+  text-align: center;
+  float: none;
+  display: inline-block;
+  margin-top: 1em;
+}
