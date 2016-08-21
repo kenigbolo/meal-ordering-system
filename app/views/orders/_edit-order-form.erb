@@ -14,7 +14,7 @@
 			<div class="panel-body"></div>
 			
 			<%= f.label :price %>:
-			<%= f.number_field :price, class: "form-control input-sm" %>
+			<%= f.number_field :price, class: "form-control input-sm", step: "any" %>
 			<div class="panel-body"></div>
 			  
 			<%= f.submit "Place Order", class: "btn btn-info btn-block" %>
