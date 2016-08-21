@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	has_many :meals
+	# :nocov:
 	def self.from_omniauth(auth)
 		where(provider: auth.provider, user_code: auth.uid).first_or_create do |user|
 			user.provider = auth.provider
@@ -9,4 +10,5 @@ class User < ApplicationRecord
 			user.save
 		end
 	end
+	# :nocov:
 end
