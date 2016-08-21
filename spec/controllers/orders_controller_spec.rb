@@ -37,8 +37,8 @@ order = FactoryGirl.create :order
 	end
 
 	describe "#new" do
-	  it "is valid with valid attributes" do
-	    expect(Order.new).to be_valid
+	  it "is not valid without valid attributes" do
+	    expect(Order.new).to_not be_valid
 	  end
 
 	  it "should render default single page template" do
@@ -79,8 +79,8 @@ order = FactoryGirl.create :order
 	end
 
 	describe "#show" do
-	  it "is valid with valid attributes" do
-	    expect(Order.new).to be_valid
+	  it "shoulld not be valid without valid attributes" do
+	    expect(Order.new).to_not be_valid
 	  end
 
 	  it "should render default single page template" do
