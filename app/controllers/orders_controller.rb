@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
 	require_dependency 'yaml'
 
 	def index
-		@orders = Order.all
+		@orders = Order.all.paginate(page: params[:page], per_page: 5)
 	end
 
 	def new
@@ -48,9 +48,9 @@ class OrdersController < ApplicationController
 	def filter
 		filter = params[:filter]
 		if filter == "Active"
-			@orders = Order.where("status = ?", filter)
+			@orders = Order.where("status = ?", filter).paginate(page: params[:page])
 		else
-			@orders = Order.where.not("status = ?", "Active")
+			@orders = Order.where.not("status = ?", "Active").paginate(page: params[:page])
 		end
 
     	respond_to do |format|
