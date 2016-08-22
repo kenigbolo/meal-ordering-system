@@ -39,7 +39,8 @@
 			  <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
 				<div class="panel panel-default">
 				  <div class="panel-heading">
-		  			<h3 class="panel-title">Active Orders</h3>
+				  	<%= page_entries_info @orders %>
+		  			<h2 class="panel-title">Active Orders</h2>
 		  		  </div>
 		  		  <table class="table table-hover table-bordered">
 		  		    <thead>
@@ -62,10 +63,15 @@
 					    <% end %>
 				    </tbody>
 				  </table>
+				  <%= will_paginate @orders, page_links: false %>				  
 				</div>
 			  </div>
 			</div>
 		</div>
+
+
+
+
 
 	<% end %>
 	</div>
