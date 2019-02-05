@@ -59,7 +59,7 @@ GEM
       ffi (~> 1.0, >= 1.0.11)
     codeclimate-test-reporter (1.0.7)
       simplecov
-    codecov (0.1.5)
+    codecov (0.1.14)
       json
       simplecov
       url
