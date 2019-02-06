@@ -145,7 +145,7 @@ GEM
     omniauth-bitbucket2 (1.0.0)
       omniauth (~> 1.0)
       omniauth-oauth2 (>= 1.1.1, < 2.0)
-    omniauth-facebook (4.0.0)
+    omniauth-facebook (5.0.0)
       omniauth-oauth2 (~> 1.2)
     omniauth-github (1.3.0)
       omniauth (~> 1.5)
