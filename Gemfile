@@ -51,7 +51,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'capybara'
   gem "database_cleaner"
-  gem "shoulda-matchers", "4.0.1"
+  gem "shoulda-matchers", "4.1.0"
   gem "coveralls", require: false
   gem "factory_girl_rails"
 end
