@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.9'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # Add gem for pagination
-gem 'will_paginate', '~> 3.1.7'
+gem 'will_paginate', '~> 3.1.8'
 # Add Gems for OAuth
 gem 'omniauth-oauth2', '~> 1.6.0'
 gem 'omniauth-facebook'
