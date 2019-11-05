@@ -73,7 +73,7 @@ GEM
     childprocess (3.0.0)
     codeclimate-test-reporter (1.0.7)
       simplecov
-    codecov (0.1.15)
+    codecov (0.1.16)
       json
       simplecov
       url
