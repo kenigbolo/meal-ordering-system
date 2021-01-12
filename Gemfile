@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.10'
 # Add gem for pagination
 gem 'will_paginate', '~> 3.3.0'
 # Add Gems for OAuth
-gem 'omniauth-oauth2', '~> 1.6.0'
+gem 'omniauth-oauth2', '~> 1.7.1'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 gem 'omniauth-bitbucket2', '~> 1.0'
